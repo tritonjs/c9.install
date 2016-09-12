@@ -307,11 +307,11 @@ tmux_download(){
   echo ":N.B: This will take a while. To speed this up install tmux 1.9 manually on your machine and restart this process."
   
   echo ":Downloading Libevent..."
-  DOWNLOAD https://raw.githubusercontent.com/c9/install/master/packages/tmux/libevent-2.0.21-stable.tar.gz libevent-2.0.21-stable.tar.gz
+  DOWNLOAD https://cdn.rawgit.com/c9/install/master/packages/tmux/libevent-2.0.21-stable.tar.gz libevent-2.0.21-stable.tar.gz
   echo ":Downloading Ncurses..."
-  DOWNLOAD https://raw.githubusercontent.com/c9/install/master/packages/tmux/ncurses-5.9.tar.gz ncurses-5.9.tar.gz
+  DOWNLOAD https://cdn.rawgit.com/c9/install/master/packages/tmux/ncurses-5.9.tar.gz ncurses-5.9.tar.gz
   echo ":Downloading Tmux..."
-  DOWNLOAD https://raw.githubusercontent.com/c9/install/master/packages/tmux/tmux-1.9.tar.gz tmux-1.9.tar.gz
+  DOWNLOAD https://cdn.rawgit.com/c9/install/master/packages/tmux/tmux-1.9.tar.gz tmux-1.9.tar.gz
 }
 
 check_tmux_version(){
@@ -347,7 +347,7 @@ tmux_install(){
     if [ $os = "darwin" ]; then
       if ! has "brew"; then
         # http://brew.sh/
-        DOWNLOAD https://raw.githubusercontent.com/Homebrew/install/master/install installbrew
+        DOWNLOAD https://cdn.rawgit.com/Homebrew/install/master/install installbrew
         ruby installbrew
       fi
       brew install tmux > /dev/null ||
@@ -379,7 +379,7 @@ collab(){
   "$NPM" install sequelize@2.0.0-beta.0
   mkdir -p "$C9_DIR"/lib
   cd "$C9_DIR"/lib
-  DOWNLOAD https://raw.githubusercontent.com/c9/install/master/packages/sqlite3/linux/sqlite3.tar.gz sqlite3.tar.gz
+  DOWNLOAD https://cdn.rawgit.com/c9/install/master/packages/sqlite3/linux/sqlite3.tar.gz sqlite3.tar.gz
   tar xzf sqlite3.tar.gz
   rm sqlite3.tar.gz
   ln -sf "$C9_DIR"/lib/sqlite3/sqlite3 "$C9_DIR"/bin/sqlite3
